@@ -38,6 +38,7 @@
   .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:14px 26px;border-radius:999px;border:0;cursor:pointer;font-size:16px;font-family:inherit}
   .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
   .btn[disabled]{opacity:.55;cursor:wait}
+  .btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;pointer-events:none}
   .hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
   section{padding:44px 0;border-top:1px solid var(--line)}
   .badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px}
@@ -112,7 +113,7 @@
   <div class="actions">
     <a class="btn" href="#kit">Claim my free kit</a>
     <a class="btn ghost" href="https://www.amazon.com/stores/SISTERANNUS/page/12708037-4054-4120-B872-0838E7AD2587" target="_blank" rel="noopener">See us on Amazon</a>
-    <a class="btn ghost" id="ttshop" href="#" target="_blank" rel="noopener" style="display:none">Shop on TikTok Shop</a>
+    <a class="btn ghost" id="ttshop" href="#" aria-disabled="true" title="Link coming soon">TikTok Shop · link coming soon</a>
   </div>
 </div>
 
@@ -263,12 +264,16 @@
 (function(){
   // ====== SETTINGS ======
   // Paste the Apps Script Web App URL here (see receiver/Code.gs and README).
-  // TikTok Shop link: paste it here once the shop is open. The button stays hidden while this is empty.
+  // TikTok Shop link: paste it here once the shop is open. Until then the button shows as "link coming soon" and can't be clicked.
   var TIKTOK_SHOP_URL = "";
   var ENDPOINT = "https://script.google.com/macros/s/AKfycbxndSqpRZ5rErrT66YFMNWlEb8v8drih2zSx0Bo1U7jE6onpaXepZQeYIMRHuOTlgTD/exec";
   // =======================
 
-  if (TIKTOK_SHOP_URL) { var tt = document.getElementById('ttshop'); tt.href = TIKTOK_SHOP_URL; tt.style.display = ''; }
+  if (TIKTOK_SHOP_URL) {
+    var tt = document.getElementById('ttshop');
+    tt.href = TIKTOK_SHOP_URL; tt.target = '_blank'; tt.rel = 'noopener';
+    tt.removeAttribute('aria-disabled'); tt.removeAttribute('title'); tt.textContent = 'Shop on TikTok Shop';
+  }
 
   var q = new URLSearchParams(location.search);
   var kit = (q.get('kit') || '').slice(0,200);
