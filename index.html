@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SISTER ANN × Creators — Free Double Effect Kit</title>
+<meta name="description" content="Try SISTER ANN's Double Effect Waterproof Eye Pencil and Cream Stick Shadow, free. No obligation to post.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f1ea; --card:#fffdf9; --ink:#1d1b19; --muted:#6b645c; --line:#e4dccf;
+    --accent:#1d1b19; --accent-ink:#fff; --soft:#efe6d9; --ok:#2f6b4f; --err:#b3392f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#161412; --card:#1f1c19; --ink:#f3ede4; --muted:#a79e92; --line:#34302b;
+      --accent:#f3ede4; --accent-ink:#161412; --soft:#2a2622; --ok:#7fc3a0; --err:#e58a82;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.15;margin:0}
+  h2{font-size:clamp(28px,5vw,38px);margin-bottom:12px}
+  h3{font-size:24px}
+  p{margin:0 0 12px}
+  a{color:inherit}
+  .top{padding-top:18px;padding-bottom:18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .logo{font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;letter-spacing:.18em;font-weight:600}
+  .top a.cta-link{font-size:14px;text-decoration:none;font-weight:600;border:1px solid var(--ink);padding:8px 14px;border-radius:999px}
+  .hero{padding-top:56px;padding-bottom:40px}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  .hero h1{font-size:clamp(42px,9vw,72px);margin-bottom:16px}
+  .hero p.lead{font-size:18px;color:var(--muted);max-width:560px}
+  .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:14px 26px;border-radius:999px;border:0;cursor:pointer;font-size:16px;font-family:inherit}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+  .btn[disabled]{opacity:.55;cursor:wait}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  .badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px}
+  .badge{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;gap:14px;align-items:center}
+  .emblem{flex:0 0 52px;height:52px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:20px;overflow:hidden}
+  .emblem img{width:100%;height:100%;object-fit:contain}
+  .badge b{display:block;font-size:15px;line-height:1.3}
+  .badge span{font-size:13px;color:var(--muted)}
+  .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px}
+  .card .tag{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .card ul{padding-left:18px;margin:14px 0}
+  .card li{margin-bottom:6px}
+  .rating{font-size:14px;color:var(--muted);margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+  .swatches{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .cap{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:14px}
+  .sw{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);background:var(--soft);padding:4px 10px 4px 5px;border-radius:999px}
+  .sw i{width:16px;height:16px;border-radius:50%;display:inline-block;border:1px solid rgba(0,0,0,.15)}
+  .setlist{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:20px 0 10px}
+  .setcard{position:relative;display:block;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:18px;cursor:pointer}
+  .setcard input{position:absolute;opacity:0;pointer-events:none}
+  .setcard:has(input:checked){border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+  .setcard:focus-within{outline:2px solid var(--ink);outline-offset:2px}
+  .setcard .sh{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px;font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;font-weight:600;font-variant-numeric:lining-nums}
+  .badge2{font:600 11px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--bg);padding:5px 9px;border-radius:999px;white-space:nowrap}
+  .srow{margin-bottom:10px}
+  .slabel{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .sel{display:none;font-size:13px;font-weight:600;margin-top:4px}
+  .setcard:has(input:checked) .sel{display:block}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:18px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .step .n{font-family:"Cormorant Garamond",serif;font-size:34px;line-height:1}
+  .terms{background:var(--soft);border-radius:20px;padding:24px;margin-top:18px}
+  .terms li{margin-bottom:8px}
+  .ideas{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+  .idea{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+  form{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-top:18px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:560px){.grid2{grid-template-columns:1fr}}
+  label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+  label .opt{font-weight:400;color:var(--muted)}
+  input,select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-height:46px}
+  input:focus,select:focus{outline:2px solid var(--ink);outline-offset:1px}
+  .field{margin-bottom:14px}
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+  .check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);margin:6px 0 18px}
+  .check input{width:20px;min-height:20px;margin-top:2px}
+  .kitbox{background:var(--soft);border-radius:14px;padding:14px 16px;margin-bottom:16px;font-size:14px;display:none}
+  .msg{margin-top:14px;font-size:15px}
+  .msg.ok{color:var(--ok)} .msg.err{color:var(--err)}
+  .done{display:none;text-align:center;padding:36px 12px}
+  .done h3{font-size:30px;margin-bottom:8px}
+  details{border-bottom:1px solid var(--line);padding:14px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 0;color:var(--muted)}
+  footer{padding:36px 0 60px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <div class="logo">SISTER ANN</div>
+  <a class="cta-link" href="#kit">Get your free kit</a>
+</header>
+
+<main>
+<!-- HERO -->
+<div class="wrap hero">
+  <div class="eyebrow">K-Beauty eye makeup from Seoul · since 2017</div>
+  <h1>Fine-line precision.<br>Soft shadow.<br>One kit.</h1>
+  <p class="lead">The Korean eye pencil with 290,000+ reviews on our official store in Korea — now at Olive Young Pasadena, and available on TikTok Shop and Amazon. We'd love to send you the Double Effect eye kit, free. No obligation to post.</p>
+  <div class="actions">
+    <a class="btn" href="#kit">Claim my free kit</a>
+    <a class="btn ghost" href="https://www.amazon.com/stores/SISTERANNUS/page/12708037-4054-4120-B872-0838E7AD2587" target="_blank" rel="noopener">See us on Amazon</a>
+    <a class="btn ghost" id="ttshop" href="#" target="_blank" rel="noopener" style="display:none">Shop on TikTok Shop</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section>
+  <div class="wrap">
+    <h2>Who we are</h2>
+    <p>SISTER ANN is a Korean eye makeup brand built around one idea: eye makeup that goes on easily and stays put through a long day. We started in Seoul in 2017. Our Double Effect Eye Pencil has earned 290,000+ reviews on our Korean official store, and is now sold at Olive Young's Pasadena store, on TikTok Shop and Amazon in the U.S.</p>
+    <div class="badges">
+      <!-- Replace the emblem text with <img src="olive-young.png" alt="Olive Young"> when the logo files are ready -->
+      <div class="badge"><div class="emblem" id="emb-oy">OY</div><div><b>No.1 Eye Pencil</b><span>Olive Young Korea</span></div></div>
+      <div class="badge"><div class="emblem" id="emb-q10">Q10</div><div><b>No.1 Eyeliner (overall)</b><span>Qoo10 Japan</span></div></div>
+      <div class="badge"><div class="emblem" id="emb-us">US</div><div><b>Now at Olive Young U.S. · Pasadena, CA</b><span>Offline store in the United States</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section>
+  <div class="wrap">
+    <h2>What's in your kit</h2>
+    <p>Two products designed to work together. Choose the set you like best. Each one has three eye pencil shades and one cream stick shadow, picked to look good together.</p>
+    <div class="setlist" id="setlist" role="radiogroup" aria-label="Choose your set"></div>
+    <p style="font-size:13px;color:var(--muted)">Swatches on this page are illustrative. Exact colors vary by screen and lighting. Results vary from person to person.</p>
+
+    <div class="products">
+      <article class="card">
+        <div class="tag">Eye Pencil</div>
+        <h3>Double Effect Waterproof Eye Pencil</h3>
+        <ul>
+          <li><b>Waterproof formula</b> built to hold its line through water and oil.</li>
+          <li><b>Double Shield technology</b> to protect your liner from moisture and oil.</li>
+          <li><b>Crystal Balm texture</b> that glides softly on the lash line, gentle on the eye area.</li>
+          <li>Fine-line tip for precise tightlining and crisp wings, in 7 shades.</li>
+        </ul>
+        <div class="rating">★ 4.7 · 290,000+ reviews on our Korean official store</div>
+      </article>
+      <article class="card">
+        <div class="tag">Cream Stick Shadow</div>
+        <h3>Double Effect Cream Stick Shadow</h3>
+        <ul>
+          <li><b>Creamy, smooth texture</b> that spreads evenly over delicate eyelids.</li>
+          <li><b>5.5 mm stick</b>: draw it where you want it, blend with a finger, done.</li>
+          <li><b>Crease-free formula</b> designed to sit close to the lid with less clumping.</li>
+          <li><b>Long-wearing film</b> to help keep the color vivid. Matte and shimmer shades.</li>
+        </ul>
+        <div class="rating">★ 4.7 from 1,414 purchase reviews on our Korean official store. Results vary from person to person.</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS / TERMS -->
+<section>
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><p><b>Tell us where to ship.</b> Fill in the short form below.</p></div>
+      <div class="step"><div class="n">2</div><p><b>We ship from our U.S. warehouse.</b> Usually 5–7 business days, and we'll send you the tracking number.</p></div>
+      <div class="step"><div class="n">3</div><p><b>Try it your way.</b> Post if you love it. No pressure if you don't.</p></div>
+    </div>
+    <div class="terms">
+      <b>The offer</b>
+      <ul>
+        <li>The kit is free. No payment, no deposit.</li>
+        <li>No obligation to post.</li>
+        <li>When our TikTok Shop U.S. page goes live, we'll send you the link to add to your Showcase. You earn a <b>30% launch commission</b> on sales from your videos.</li>
+        <li>If you do post, please disclose that the product was gifted (for example <b>#gifted</b>) and use TikTok's branded content toggle, as U.S. rules require.</li>
+        <li>This is a gifting offer. We're pre-launch, so we aren't running paid collaborations yet. Once we have sales data, we'd be glad to revisit it.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT IDEAS -->
+<section>
+  <div class="wrap">
+    <h2>If you'd like ideas <span style="font-size:.6em;color:var(--muted);font-family:Inter,sans-serif;font-weight:400">(totally optional)</span></h2>
+    <p>Our favorite content comes from creators doing what they already do. A few formats that suit the product:</p>
+    <div class="ideas">
+      <div class="idea"><b>Get ready with me</b><p style="margin-top:6px;color:var(--muted)">Eyes first: liner, then a quick swipe of shadow.</p></div>
+      <div class="idea"><b>The smudge test</b><p style="margin-top:6px;color:var(--muted)">Your daily routine from morning to night. Show the result honestly.</p></div>
+      <div class="idea"><b>Two products, five minutes</b><p style="margin-top:6px;color:var(--muted)">A simple everyday eye look for beginners.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section id="kit">
+  <div class="wrap">
+    <h2>Where should we send your kit?</h2>
+    <p>U.S. shipping addresses only. We only use this information to ship your kit.</p>
+
+    <div class="done" id="done">
+      <h3>Thank you!</h3>
+      <p>We've received your details. Our team will ship your kit and email you the tracking number.</p>
+    </div>
+
+    <form id="kitform" novalidate>
+      <div class="kitbox" id="kitbox"></div>
+
+      <div class="grid2">
+        <div class="field"><label for="name">Full name</label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      </div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="address">Shipping address</label><input id="address" name="address" autocomplete="street-address" placeholder="Street, apt/unit, city, state" required></div>
+      <div class="field" style="max-width:240px"><label for="zip">ZIP code</label><input id="zip" name="zip" autocomplete="postal-code" inputmode="numeric" maxlength="10" required></div>
+
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="kit" id="kit-hidden">
+      <input type="hidden" name="suggested" id="suggested-hidden">
+      <input type="hidden" name="source" id="source-hidden">
+
+      <label class="check"><input type="checkbox" id="consent" required>
+        <span>I agree that SISTER ANN may use these details to ship my kit and contact me about it.</span></label>
+
+      <button class="btn" id="submit" type="submit">Send my shipping details</button>
+      <div class="msg" id="msg" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details><summary>Do I have to post?</summary><p>No. The kit is yours either way. If you do post, we'd love to see it.</p></details>
+    <details><summary>Is there any cost?</summary><p>No. The kit and shipping are free for you.</p></details>
+    <details><summary>When will it arrive?</summary><p>We ship from our U.S. warehouse, usually 5–7 business days. We'll email the tracking number.</p></details>
+    <details><summary>How does the commission work?</summary><p>When our TikTok Shop U.S. page is live, we'll send you the link. Sales that come through your videos earn you a 30% launch commission.</p></details>
+    <details><summary>Can I change my shades?</summary><p>We pick each set so the shades work well together, so there's nothing to choose on this page. If you have a strong preference, mention it when you reply to our email and we'll check what's available.</p></details>
+    <details><summary>How do I remove waterproof liner?</summary><p>Use an oil-based cleanser or an eye makeup remover. Warm water or a light foam cleanser alone may not be enough.</p></details>
+    <details><summary>Who do I contact?</summary><p>Reply to the email that brought you here, or write to <a href="mailto:suj.lee@sister-ann.com">suj.lee@sister-ann.com</a>.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="logo" style="font-size:18px;margin-bottom:8px">SISTER ANN</div>
+    <p>EXPLZN USA INC · 10 Corporate Park, Suite 210, Irvine, CA 92606</p>
+    <p>Not interested? Just let us know and we'll update our list. Your details are used only to fulfill your kit request.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ====== SETTINGS ======
+  // Paste the Apps Script Web App URL here (see receiver/Code.gs and README).
+  // TikTok Shop link: paste it here once the shop is open. The button stays hidden while this is empty.
+  var TIKTOK_SHOP_URL = "";
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbxndSqpRZ5rErrT66YFMNWlEb8v8drih2zSx0Bo1U7jE6onpaXepZQeYIMRHuOTlgTD/exec";
+  // =======================
+
+  if (TIKTOK_SHOP_URL) { var tt = document.getElementById('ttshop'); tt.href = TIKTOK_SHOP_URL; tt.style.display = ''; }
+
+  var q = new URLSearchParams(location.search);
+  var kit = (q.get('kit') || '').slice(0,200);
+  var src = (q.get('src') || '').slice(0,100);
+  // Shade sets (same combinations as our email sheet). Colors on screen are illustrative.
+  var PENCIL = {'01':['Midnight Black','#1b1a1c'],'03':['Cinnamon Mocha','#7d4d38'],'04':['Glam Latte','#b08766'],
+                '05':['Champagne Gold','#d6b88f'],'06':['Baby Peach','#e6b8a0'],'07':['Matt Black','#26252a'],'08':['Matt Brown','#573a2d']};
+  var SHADOW = {'01':['Starlit Pink','#e8b9b3'],'03':['Sunset Ruby','#a24b45'],'05':['Melon Fizz','#e7b49c'],'06':['Solar Sienna','#b88d6f']};
+  var SETS = [
+    {code:'KIT-A2', p:['01','03','06'], s:'03'},
+    {code:'KIT-A',  p:['07','08','05'], s:'01'},
+    {code:'KIT-B',  p:['03','08','04'], s:'06'},
+    {code:'KIT-D2', p:['01','03'],      s:'06'},
+    {code:'KIT-C',  p:['05','06','01'], s:'01'}
+  ];
+  // Other sets we may have suggested by email: shown too, but only when the link carries them.
+  var EXTRA = {
+    'KIT-B2': {p:['03','04','01'], s:'05'},
+    'KIT-C2': {p:['06','04','07'], s:'03'},
+    'KIT-D':  {p:['07','08'],      s:'05'}
+  };
+  var list = SETS.slice();
+  if (EXTRA[kit]) list.unshift({code:kit, p:EXTRA[kit].p, s:EXTRA[kit].s});
+
+  function describe(d){
+    return 'Eye Pencil ' + d.p.map(function(c){ return c + ' ' + PENCIL[c][0]; }).join(', ') +
+           ' + Cream Stick Shadow ' + d.s + ' ' + SHADOW[d.s][0];
+  }
+  function chip(code, def){
+    var s = document.createElement('span'); s.className = 'sw';
+    var i = document.createElement('i'); i.style.background = def[1];
+    s.appendChild(i); s.appendChild(document.createTextNode(code + ' ' + def[0])); return s;
+  }
+  function row(label, chips){
+    var r = document.createElement('div'); r.className = 'srow';
+    var l = document.createElement('div'); l.className = 'slabel'; l.textContent = label;
+    var w = document.createElement('div'); w.className = 'swatches'; chips.forEach(function(c){ w.appendChild(c); });
+    r.appendChild(l); r.appendChild(w); return r;
+  }
+
+  var kitbox = document.getElementById('kitbox');
+  var kitHidden = document.getElementById('kit-hidden');
+  var setlist = document.getElementById('setlist');
+  function choose(d){
+    kitHidden.value = d.code + ' | ' + describe(d);
+    kitbox.style.display = 'block';
+    kitbox.textContent = 'Your kit: ' + describe(d);
+  }
+  list.forEach(function(d, idx){
+    var lab = document.createElement('label'); lab.className = 'setcard';
+    var inp = document.createElement('input'); inp.type = 'radio'; inp.name = 'set'; inp.value = d.code;
+    var head = document.createElement('div'); head.className = 'sh';
+    var title = document.createElement('span'); title.textContent = 'Set ' + (idx + 1);
+    head.appendChild(title);
+    if (d.code === kit) { var b = document.createElement('span'); b.className = 'badge2'; b.textContent = 'Suggested for you'; head.appendChild(b); }
+    lab.appendChild(inp); lab.appendChild(head);
+    lab.appendChild(row('Eye Pencil', d.p.map(function(c){ return chip(c, PENCIL[c]); })));
+    lab.appendChild(row('Cream Stick Shadow', [chip(d.s, SHADOW[d.s])]));
+    var sel = document.createElement('div'); sel.className = 'sel'; sel.textContent = '✓ Selected'; lab.appendChild(sel);
+    inp.addEventListener('change', function(){ choose(d); });
+    if (d.code === kit) { inp.checked = true; choose(d); }
+    setlist.appendChild(lab);
+  });
+  document.getElementById('suggested-hidden').value = kit;
+  document.getElementById('source-hidden').value = src;
+
+  var f = document.getElementById('kitform'), btn = document.getElementById('submit'), msg = document.getElementById('msg');
+
+  function setMsg(t, cls){ msg.textContent = t; msg.className = 'msg ' + (cls||''); }
+  function val(id){ return document.getElementById(id).value.trim(); }
+
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    setMsg('');
+    var name=val('name'), phone=val('phone'), email=val('email'), address=val('address'), zip=val('zip');
+    if(!name||!phone||!email||!address||!zip){ setMsg('Please fill in every field.','err'); return; }
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ setMsg('Please check your email address.','err'); return; }
+    if(address.length < 8 || !/\d/.test(address)){ setMsg('Please include your street, city and state in the address.','err'); return; }
+    if(!/^\d{5}(-\d{4})?$/.test(zip)){ setMsg('Please enter a 5-digit ZIP code.','err'); return; }
+    if(phone.replace(/\D/g,'').length < 10){ setMsg('Please enter a phone number with area code.','err'); return; }
+    if(!kitHidden.value){ setMsg('Please choose one of the sets above.','err'); document.getElementById('setlist').scrollIntoView({behavior:'smooth', block:'center'}); return; }
+    if(!document.getElementById('consent').checked){ setMsg('Please tick the box so we can ship your kit.','err'); return; }
+    if(!ENDPOINT){ setMsg('This form is not connected yet. Please contact SISTER ANN.','err'); return; }
+
+    btn.disabled = true; btn.textContent = 'Sending…';
+    var body = new URLSearchParams(new FormData(f));
+    if (q.get('test') === '1') body.set('test', '1');   // test submissions go only to the sender's own inbox
+    fetch(ENDPOINT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: body.toString()})
+      .then(function(){
+        f.style.display='none';
+        document.getElementById('done').style.display='block';
+        document.getElementById('done').scrollIntoView({behavior:'smooth', block:'center'});
+      })
+      .catch(function(){
+        btn.disabled=false; btn.textContent='Send my shipping details';
+        setMsg('Something went wrong. Please try again, or reply to our email with your address.','err');
+      });
+  });
+})();
+</script>
+</body>
+</html>
