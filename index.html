@@ -83,7 +83,6 @@
   input,select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-height:46px}
   input:focus,select:focus{outline:2px solid var(--ink);outline-offset:1px}
   .field{margin-bottom:14px}
-  .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
   .check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);margin:6px 0 18px}
   .check input{width:20px;min-height:20px;margin-top:2px}
   .kitbox{background:var(--soft);border-radius:14px;padding:14px 16px;margin-bottom:16px;font-size:14px;display:none}
@@ -222,8 +221,6 @@
       <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
       <div class="field"><label for="address">Shipping address</label><input id="address" name="address" autocomplete="street-address" placeholder="Street, apt/unit, city, state" required></div>
       <div class="field" style="max-width:240px"><label for="zip">ZIP code</label><input id="zip" name="zip" autocomplete="postal-code" inputmode="numeric" maxlength="10" required></div>
-
-      <input class="hp" type="text" name="hp_extra_info" id="hp_extra_info" tabindex="-1" autocomplete="off" aria-hidden="true" data-lpignore="true" data-1p-ignore="true">
       <input type="hidden" name="kit" id="kit-hidden">
       <input type="hidden" name="suggested" id="suggested-hidden">
       <input type="hidden" name="source" id="source-hidden">
@@ -276,6 +273,7 @@
   }
 
   var q = new URLSearchParams(location.search);
+  var t0 = Date.now();   // anti-bot: humans need more than a few seconds to fill the form
   var kit = (q.get('kit') || '').slice(0,200);
   var src = (q.get('src') || '').slice(0,100);
   // Shade sets (same combinations as our email sheet). Colors on screen are illustrative.
@@ -360,6 +358,7 @@
 
     btn.disabled = true; btn.textContent = 'Sending…';
     var body = new URLSearchParams(new FormData(f));
+    body.set('elapsed', String(Date.now() - t0));
     if (q.get('test') === '1') body.set('test', '1');   // test submissions go only to the sender's own inbox
     fetch(ENDPOINT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: body.toString()})
       .then(function(){
